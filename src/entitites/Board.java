@@ -15,7 +15,7 @@ public class Board {
                     board[i][j] = 'X'; 
                 } else if (i == board.length / 2 && j == board[i].length - 2) {
                     board[i][j] = 'C'; 
-                } else if (j == 2 && i == board.length / 2) {
+                } else if (j == board.length && i == board.length / 2) {
                     board[i][j] = '-'; 
                 } else {
                     board[i][j] = ' ';
