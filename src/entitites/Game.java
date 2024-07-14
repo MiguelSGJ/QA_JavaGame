@@ -14,7 +14,7 @@ public class Game {
 
     public Game(String playerName) {
         player = new Player(playerName, initialPos, false);
-        board = new Board(3, 10);
+        board = new Board(1, 10);
         board.initBoard(player);
 
         questions = new ArrayList<>();
