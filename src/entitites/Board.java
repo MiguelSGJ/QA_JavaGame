@@ -8,34 +8,38 @@ public class Board {
     }
 
     public void initBoard(Player player) {
-        board[player.getPosition()][0] = player;
+        board[0][player.getPosition()] = player;
     }
 
     public void printBoard() {
         for (Player[] row : board) {
             for (Player player : row) {
                 if (player != null) {
-                    System.out.print(player.getName());
+                    System.out.print(player.getNome() + " ");
                 } else {
-                    System.out.print("-");
+                    System.out.print("|----| ");
                 }
             }
             System.out.println();
         }
     }
-    
+
     public void updatePlayerPosition(Player player) {
         if (player.getPosition() < 0 || player.getPosition() >= board[0].length) {
-            return; 
+            return;
         }
 
         for (int i = 0; i < board.length; i++) {
             for (int j = 0; j < board[i].length; j++) {
-                board[i][j] = null; 
+                if (board[i][j] != null && board[i][j].getNome().equals(player.getNome())) {
+                    board[i][j] = null;
+                }
             }
         }
-        board[1][player.getPosition()] = player; 
+        board[0][player.getPosition()] = player;
     }
-    
-}
 
+    public int getColumns() {
+        return board[0].length;
+    }
+}

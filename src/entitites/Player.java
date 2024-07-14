@@ -1,49 +1,38 @@
 package entitites;
 
 public class Player {
-	private Player name;
-	private String nome;
-	private int position;
-	private boolean winStatus;
-		
-	public Player(Player name, int position, boolean winStatus) {
-		this.name = name;
-		this.position = position;
-		this.winStatus = winStatus;
-	}
-	
-	public Player(String nome) {
-		this.nome = nome;
-	}
+    private String nome;
+    private int position;
+    private boolean winStatus;
 
-	public Player getName() {
-		return name;
-	}
-	
-	public Player setName() {
-		return name;
-	}
-	
-	public String getNome() {
-		return nome;
-	}
+    public Player(String nome, int position, boolean winStatus) {
+        this.nome = nome;
+        this.position = position;
+        this.winStatus = winStatus;
+    }
 
-	public int getPosition() {
-		return position;
-	}
-	
-	public boolean winStatus() {
-		return winStatus;
-	}
-	
-	public int rightAnswer() {
-		return position++;
-	}
+    public Player(String nome) {
+        this(nome, 0, false);
+    }
 
-	@Override
-	public String toString() {
-		return nome;
-	}
+    public String getNome() {
+        return nome;
+    }
 
-	
+    public int getPosition() {
+        return position;
+    }
+
+    public boolean winStatus() {
+        return winStatus;
+    }
+
+    public void rightAnswer() {
+        this.position++;
+    }
+
+    @Override
+    public String toString() {
+        return nome;
+    }
 }
